@@ -16,27 +16,24 @@ function RenderDish({ dish }) {
 }
 
 function RenderComments({ comments }) {
-    //const com = 
     return (
-
         <div className='col-12 col-md-5 m-1'>
             <h3>Comments</h3>
-            {comments.map((comment) => {
-                return (
-                    <div key={comment.id}>
-                        <p>{comment.comment}</p>
-                        <p>--{comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}</p>
-                    </div>
-                );
-            })}
+            {
+                comments.map((comment) => {
+                    return (
+                        <div key={comment.id}>
+                            <p>{comment.comment}</p>
+                            <p>--{comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(Date.parse(comment.date)))}</p>
+                        </div>
+                    );
+                })
+            }
         </div>
-
     );
 }
 
 const DishDetail = (props) => {
-
-    //const dishDetails = this.props.selectedDish;
     if (props.dish != null) {
         return (
             <div className='container'>
